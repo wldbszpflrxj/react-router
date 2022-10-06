@@ -7,6 +7,7 @@ const Router = ({ children }) => {
 
   useEffect(() => {
     window.onpopstate = (e) => {
+      if (e.state === null) return setLocation("/");
       setLocation(e.state);
     };
   }, []);
